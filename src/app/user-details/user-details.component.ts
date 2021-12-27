@@ -17,7 +17,6 @@ export class UserDetailsComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

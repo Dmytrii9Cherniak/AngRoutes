@@ -10,7 +10,7 @@ import {IPost} from "../models/post";
 })
 export class PostsDetailsComponent implements OnInit {
 
-  fullPost: IPost[];
+  fullPost: IPost;
 
   constructor(private activatedRoute: ActivatedRoute, private postsService: PostService) {
     this.activatedRoute.params.subscribe(params => {
@@ -18,7 +18,6 @@ export class PostsDetailsComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
