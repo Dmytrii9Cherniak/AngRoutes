@@ -11,10 +11,13 @@ import { HeaderComponent } from './header/header.component';
 import {RouterModule, Routes} from "@angular/router";
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { PostsDetailsComponent } from './posts-details/posts-details.component';
+import {UserDeactivatorService} from "./services/user-deactivator.service";
+import {PostsActivateService} from "./services/posts-activate.service";
 
 let routes : Routes = [
-  {path: 'users', component: UsersComponent, children: [{path: ':id', component: UserDetailsComponent}]},
-  {path: 'posts', component: PostsComponent},
+  {path: 'users', component: UsersComponent, canDeactivate: [UserDeactivatorService],
+    children: [{path: ':id', component: UserDetailsComponent}]},
+  {path: 'posts', component: PostsComponent, canActivate: [PostsActivateService]},
   {path: 'posts/:id', component: PostsDetailsComponent}
 ]
 
